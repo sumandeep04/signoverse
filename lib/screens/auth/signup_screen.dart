@@ -1,12 +1,12 @@
 // lib/screens/auth/signup_screen.dart
 
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // Import for debugPrint
+// Import for debugPrint
 import '../../utils/app_colors.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/primary_button.dart';
 import '../home_screen.dart'; // Target screen after successful signup
-import 'login_screen.dart'; // Note: This import may still be unused, but kept if other files use it.
+// Note: This import may still be unused, but kept if other files use it.
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

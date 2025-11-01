@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
-/// A custom, aesthetically pleasing bottom navigation bar for the application.
 class AppNavigationBar extends StatelessWidget {
-  /// The currently selected index (0-4).
   final int currentIndex;
-
-  /// Callback function when a navigation item is tapped.
   final ValueChanged<int> onItemSelected;
 
   const AppNavigationBar({
@@ -15,7 +11,6 @@ class AppNavigationBar extends StatelessWidget {
     required this.onItemSelected,
   });
 
-  // Define the navigation items
   final List<Map<String, dynamic>> navItems = const [
     {'icon': Icons.home_rounded, 'label': 'Home', 'index': 0},
     {'icon': Icons.connect_without_contact_rounded, 'label': 'Translate', 'index': 1},
@@ -27,12 +22,10 @@ class AppNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // FIX: Replaced AppColors.surface with AppColors.background to resolve "getter 'surface' isn't defined" error.
       decoration: BoxDecoration(
-        color: AppColors.background, // Using background as a common defined color
+        color: AppColors.background,
         boxShadow: [
           BoxShadow(
-            // Subtle shadow for lift effect
             color: AppColors.darkText.withAlpha(0x33),
             spreadRadius: 0,
             blurRadius: 15,
@@ -40,7 +33,7 @@ class AppNavigationBar extends StatelessWidget {
           ),
         ],
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30), // Increased rounding
+          topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
         ),
       ),
@@ -51,22 +44,16 @@ class AppNavigationBar extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           currentIndex: currentIndex,
-          onTap: onItemSelected, // This links the UI tap event to the required callback
-          type: BottomNavigationBarType.fixed, // ensures items are evenly spaced
+          onTap: onItemSelected,
+          type: BottomNavigationBarType.fixed,
           backgroundColor: AppColors.primary,
-
-          // Styling for selected items (Uses AppColors.action - Orange)
           selectedItemColor: AppColors.action,
           selectedIconTheme: const IconThemeData(size: 28),
           selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-
-          // Styling for unselected items (Uses a muted white/lightText)
-          unselectedItemColor: AppColors.lightText.withAlpha(0xAA), // Less visible than selected
+          unselectedItemColor: AppColors.lightText.withAlpha(0xAA),
           unselectedIconTheme: const IconThemeData(size: 24),
           unselectedLabelStyle: const TextStyle(fontSize: 11),
-
-          elevation: 0, // Elevation is handled by the container's shadow
-
+          elevation: 0,
           items: navItems.map((item) {
             return BottomNavigationBarItem(
               icon: Icon(item['icon']),

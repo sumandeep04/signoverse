@@ -6,10 +6,10 @@ class AppColors {
   static const Color primary = Color(0xFF143C3C); // Dark Teal/Green: #143C3C
 
   // Secondary color (Muted Green) - Used for cards and accents
-  static const Color secondary = Color(0xFFE2EEDF); // Muted Green: #799A83
+  static const Color secondary = Color(0xFFF5F5F5); // Light Grey
 
   // Accent/Light Background (Off-White) - Used for main body background
-  static const Color lightBackground = Color(0xFFE2EEDF); // Off-White: #E2EEDF
+  static const Color lightBackground = Color(0xFFFFFFFF); // White
 
   // Tertiary/Action color (Orange) - Used for important buttons/CTAs
   static const Color action = Color(0xFFF7934C); // Orange: #F7934C
@@ -21,7 +21,7 @@ class AppColors {
   static const Color lightText = Colors.white;
 
   // A slight modification for input/secondary cards for better separation
-  static const Color lightCard = Color(0xFFE8F0E8); // Slightly lighter than lightBackground
+  static const Color lightCard = Color(0xFFF5F5F5); // Light Grey
 
   // We can derive a slightly darker version of the secondary for contrast
   static const Color secondaryDark = Color(0xFF5A7B68);
@@ -40,6 +40,6 @@ class AppColors {
   static Color get accent => action; // Alias for the action color
   static Color get darkPrimary => primary;
 
-  static Color? get white => null; // Alias for the primary color
+  static Color get white => Colors.white;
 
 }
